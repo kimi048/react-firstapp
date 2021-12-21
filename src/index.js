@@ -31,12 +31,14 @@ class App extends Component{
 
   render() {
     const state = this.state;
+    let newsFiltered = state.filtered;
+    let newsAll = state.news;
     console.log("state");
     console.log(state);
     return (
       <>
         <Header keywords={this.getKeywords}/>
-        <NewsList news={state.news}>
+        <NewsList news={newsFiltered.length===0? newsAll : newsFiltered}>
           <br />
           <h1>I am the news</h1>
         </NewsList>
