@@ -6,7 +6,7 @@ const NewsList = (props) => {
     <NewsItem item={item} key={index}/>
   ))
 
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <div>news list</div>

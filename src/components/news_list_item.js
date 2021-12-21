@@ -7,7 +7,7 @@ let news_item = css({
 })
 
 const NewsItem = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div {...news_item}>
       <h3>{props.item.title}</h3>
