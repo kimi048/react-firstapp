@@ -1,15 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Header from './components/header';
+import JSON from './db.json';
+import NewsList from './components/news_list';
+import Footer from './components/footer';
+class App extends Component{
+  constructor() {
+    super()
+    this.state = {
+      news: JSON,
+      footerText:"I am the main footer"
+    }
+  }
+  render() {
+    const state = this.state;
+    return (
+      <>
+        <Header />
+        <NewsList news={state.news}>
+          <br />
+          <h1>I am the news</h1>
+        </NewsList>
+        <Footer footerText={state.footerText} />
+      </>
+    )
+  }
+}
+// const App = () => {
+//   return (
+//     <>
+//       <Header />
+//     </>
+//   )
+// }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />,document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
